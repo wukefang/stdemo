@@ -1,5 +1,6 @@
 package com.st.demo.controller;
 
+import com.st.demo.annotation.DBSource;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,7 +13,8 @@ public class DemoController {
 
 
     @RequestMapping(value = "/demoController")
-    public String demoCtroller(HttpServletRequest request, HttpServletResponse response){
+    @DBSource
+    public String demoController(HttpServletRequest request, HttpServletResponse response){
         System.out.println("aaa");
         return "helloWorld";
     }
