@@ -13,7 +13,7 @@ public class DemoController {
 
     @RequestMapping(value = "/demoController")
     public String demoCtroller(HttpServletRequest request, HttpServletResponse response){
-
+        System.out.println("aaa");
         return "helloWorld";
     }
 }
