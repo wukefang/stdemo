@@ -1,6 +1,12 @@
 package com.st.demo.service;
 
+import com.st.demo.model.DemoUser;
+
+import java.util.List;
+
 public interface IDemoService {
 
-    public String test();
+    String insertTest();
+
+    List<DemoUser> queryTest();
 }

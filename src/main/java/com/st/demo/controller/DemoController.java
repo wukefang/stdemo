@@ -1,9 +1,10 @@
 package com.st.demo.controller;
 
-import com.st.demo.annotation.DBSource;
+import com.st.demo.service.IDemoService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -11,11 +12,21 @@ import javax.servlet.http.HttpServletResponse;
 @RequestMapping(value = "/demo")
 public class DemoController {
 
+    @Resource
+    private IDemoService iDemoService;
 
-    @RequestMapping(value = "/demoController")
-    @DBSource
-    public String demoController(HttpServletRequest request, HttpServletResponse response){
-        System.out.println("aaa");
-        return "helloWorld";
+    @RequestMapping(value = "/insertTest")
+    public String insertTest(HttpServletRequest request, HttpServletResponse response){
+        System.out.println("DemoController [insertTest]");
+        iDemoService.insertTest();
+        return "insertTest";
+    }
+
+
+    @RequestMapping(value = "/queryTest")
+    public String queryTest(HttpServletRequest request, HttpServletResponse response){
+        System.out.println("DemoController [queryTest]");
+        iDemoService.queryTest();
+        return "queryTest";
     }
 }
