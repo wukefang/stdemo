@@ -22,7 +22,7 @@ jdbc:
     driverClass: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/wkf?characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=true
     username: wkf
-    password: 0415
+    password: "0415"
     initialSize: 10
     maxActive: 30
     maxWait: 5000
@@ -32,7 +32,7 @@ jdbc:
     driverClass: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/wkf?characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=true
     username: root
-    password: 0415
+    password: "0415"
     initialSize: 10
     maxActive: 30
     maxWait: 5000

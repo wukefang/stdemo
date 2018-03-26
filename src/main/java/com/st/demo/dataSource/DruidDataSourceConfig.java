@@ -72,14 +72,14 @@ public class DruidDataSourceConfig {
     @Bean(name = "readDB")
     public DruidDataSource getReadDataSource() throws SQLException {
         DruidDataSource druidDataSource = new DruidDataSource();
-        druidDataSource.setDriverClassName(getDataSourceProperty().getWrite().getDriverClass());
-        druidDataSource.setUrl(getDataSourceProperty().getWrite().getUrl());
-        druidDataSource.setUsername(getDataSourceProperty().getWrite().getUsername());
-        druidDataSource.setPassword(getDataSourceProperty().getWrite().getPassword());
-        druidDataSource.setInitialSize(getDataSourceProperty().getWrite().getInitialSize());
-        druidDataSource.setMaxActive(getDataSourceProperty().getWrite().getMaxActive());
-        druidDataSource.setMaxWait(getDataSourceProperty().getWrite().getMaxWait());
-        druidDataSource.setFilters(getDataSourceProperty().getWrite().getFilters());
+        druidDataSource.setDriverClassName(getDataSourceProperty().getRead().getDriverClass());
+        druidDataSource.setUrl(getDataSourceProperty().getRead().getUrl());
+        druidDataSource.setUsername(getDataSourceProperty().getRead().getUsername());
+        druidDataSource.setPassword(getDataSourceProperty().getRead().getPassword());
+        druidDataSource.setInitialSize(getDataSourceProperty().getRead().getInitialSize());
+        druidDataSource.setMaxActive(getDataSourceProperty().getRead().getMaxActive());
+        druidDataSource.setMaxWait(getDataSourceProperty().getRead().getMaxWait());
+        druidDataSource.setFilters(getDataSourceProperty().getRead().getFilters());
         return druidDataSource;
     }
 
