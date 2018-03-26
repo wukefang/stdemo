@@ -1,7 +1,10 @@
 package com.st.demo.controller;
 
+import com.st.demo.service.DemoService;
 import com.st.demo.service.IDemoService;
 import com.st.util.TraceIdUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,12 +16,14 @@ import javax.servlet.http.HttpServletResponse;
 @RequestMapping(value = "/demo")
 public class DemoController {
 
+    Logger LOG = LoggerFactory.getLogger(DemoController.class);
+
     @Resource
     private IDemoService iDemoService;
 
     @RequestMapping(value = "/insertTest")
     public String insertTest(HttpServletRequest request, HttpServletResponse response){
-        System.out.println("DemoController [insertTest]");
+        LOG.info("DemoController [insertTest]");
         iDemoService.insertTest();
         return "insertTest";
     }
@@ -26,8 +31,7 @@ public class DemoController {
 
     @RequestMapping(value = "/queryTest")
     public String queryTest(HttpServletRequest request, HttpServletResponse response){
-        System.out.println("DemoController [queryTest]");
-        System.out.println(TraceIdUtils.get());
+        LOG.info("DemoController [queryTest]");
         iDemoService.queryTest();
         return "queryTest";
     }

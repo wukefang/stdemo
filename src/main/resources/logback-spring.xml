@@ -20,7 +20,7 @@
             <pattern>%d{HH:mm:ss.SSS} [%thread] [%requestId] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
-    <root level="info">
+    <root level="INFO">
         <appender-ref ref="STDOUT" />
         <appender-ref ref="FILE"/>
     </root>

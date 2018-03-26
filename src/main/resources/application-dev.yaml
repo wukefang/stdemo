@@ -8,3 +8,32 @@ log:
 
 
 
+druid:
+  urlMapping: /druid/*
+  loginUsername: druid
+  loginPassword: druid
+  logSlowSql: true
+  urlPatterns: /*
+  exclusions: \*.js,\*.gif,\*.jpg,\*.png,\*.css,\*.ico,/druid/*
+  profileEnable: true
+
+jdbc:
+  read:
+    driverClass: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/wkf?characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=true
+    username: wkf
+    password: 0415
+    initialSize: 10
+    maxActive: 30
+    maxWait: 5000
+    filters: stat
+
+  write:
+    driverClass: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/wkf?characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&useSSL=true
+    username: root
+    password: 0415
+    initialSize: 10
+    maxActive: 30
+    maxWait: 5000
+    filters: stat

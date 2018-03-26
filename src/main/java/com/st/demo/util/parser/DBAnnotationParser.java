@@ -30,13 +30,13 @@ public class DBAnnotationParser {
 
     @Before(value = "onPointCut() && onPointCunt2()")
     public void handleAnnotation(JoinPoint joinPoint){
-        System.out.println("DBAnnotationParser [handleAnnotation]");
+        LOG.info("DBAnnotationParser [handleAnnotation]");
         readWriteDataSource.setReadOnly(true);
     }
 
     @After(value = "onPointCut()&&onPointCunt2()")
     public void clearDB(){
-        System.out.println("DBAnnotationParser [clearDB]");
+        LOG.info("DBAnnotationParser [clearDB]");
         readWriteDataSource.clear();
     }
 }

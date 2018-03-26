@@ -22,7 +22,6 @@ public class DemoService implements IDemoService {
 
     @Override
     public String insertTest() {
-        System.out.println("DemoService [test]");
         LOG.info("DemoService [test]");
         int rows = userMapper.insert("wkf","pwd",23);
         System.out.println("rows:"+rows);
@@ -32,16 +31,14 @@ public class DemoService implements IDemoService {
     @ReadOnly
     @Override
     public List<DemoUser> queryTest(){
-        System.out.println("DemoService [queryTest] begin");
-        LOG.info("DemoService [queryTest]");
-        System.out.println(TraceIdUtils.get());
+        LOG.info("DemoService [queryTest] begin");
         List<DemoUser> demoUsers = userMapper.queryUsersByName("wkf");
         if(demoUsers!=null && demoUsers.size()>0) {
             for (int i = 0; i < demoUsers.size(); i++) {
-                System.out.println(demoUsers.get(i).toString());
+                LOG.info(demoUsers.get(i).toString());
             }
         }
-        System.out.println("DemoService [queryTest] end");
+        LOG.info("DemoService [queryTest] end");
         return demoUsers;
     }
 }
