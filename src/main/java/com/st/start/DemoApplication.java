@@ -1,14 +1,13 @@
 package com.st.start;
 
-import org.apache.ibatis.builder.annotation.MapperAnnotationBuilder;
+import com.st.filter.LogFilter;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
-@SpringBootApplication(scanBasePackages = {"com.st.demo","com.st.start"})
+@SpringBootApplication(scanBasePackages = {"com.st.start","com.st.demo"})
 @EnableAspectJAutoProxy
 @MapperScan(basePackages = {"com.st.demo.mapper"})
 @EnableAutoConfiguration

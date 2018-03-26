@@ -1,0 +1,10 @@
+server:
+  port: 8000
+  context-path: /st
+
+
+log:
+  path: C:\wkf_work_space\Temp\stdemo_dev.log
+
+
+

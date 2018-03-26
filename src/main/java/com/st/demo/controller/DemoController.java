@@ -1,6 +1,7 @@
 package com.st.demo.controller;
 
 import com.st.demo.service.IDemoService;
+import com.st.util.TraceIdUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,6 +27,7 @@ public class DemoController {
     @RequestMapping(value = "/queryTest")
     public String queryTest(HttpServletRequest request, HttpServletResponse response){
         System.out.println("DemoController [queryTest]");
+        System.out.println(TraceIdUtils.get());
         iDemoService.queryTest();
         return "queryTest";
     }
