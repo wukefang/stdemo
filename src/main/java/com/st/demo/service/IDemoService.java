@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface IDemoService {
 
-    String insertTest();
+    String insertTest(Integer type);
 
     List<DemoUser> queryTest();
 }

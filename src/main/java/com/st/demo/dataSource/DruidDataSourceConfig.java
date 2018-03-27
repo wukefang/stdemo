@@ -9,6 +9,7 @@ import com.st.demo.properties.JdbcProperty;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.aop.Advisor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
@@ -16,6 +17,7 @@ import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 import javax.annotation.Resource;
 import java.sql.SQLException;
@@ -32,6 +34,8 @@ public class DruidDataSourceConfig {
     public DataSourceProperty getDataSourceProperty(){
         return new DataSourceProperty();
     }
+
+
 
     @Bean
     public ServletRegistrationBean druidServlet() {
@@ -94,6 +98,12 @@ public class DruidDataSourceConfig {
         dynamicDataSource.setDefaultTargetDataSource(getWriteDataSource());
         return dynamicDataSource;
     }
+    @Bean
+    public DataSourceTransactionManager getDataSourceTransactionManager() throws SQLException {
+        DataSourceTransactionManager dataSourceTransactionManager = new DataSourceTransactionManager(getDynamicDataSource());
+        return dataSourceTransactionManager;
+    }
+
 
     @Bean
     public SqlSessionFactory getSqlSessionFactory() throws Exception {

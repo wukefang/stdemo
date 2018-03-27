@@ -5,6 +5,7 @@ import com.st.demo.service.IDemoService;
 import com.st.util.TraceIdUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,10 +22,10 @@ public class DemoController {
     @Resource
     private IDemoService iDemoService;
 
-    @RequestMapping(value = "/insertTest")
-    public String insertTest(HttpServletRequest request, HttpServletResponse response){
+    @RequestMapping(value = "/insertTest/{type}")
+    public String insertTest(HttpServletRequest request, HttpServletResponse response, @PathVariable Integer type){
         LOG.info("DemoController [insertTest]");
-        iDemoService.insertTest();
+        iDemoService.insertTest(type);
         return "insertTest";
     }
 
