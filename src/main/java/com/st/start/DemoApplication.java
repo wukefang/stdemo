@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication(scanBasePackages = {"com.st","com.st.filter"})
 @EnableAspectJAutoProxy
-@MapperScan(basePackages = {"com.st.demo.mapper"})
+@MapperScan(basePackages = {"com.st.mapper"})
 @EnableAutoConfiguration
 @EnableTransactionManagement
 public class DemoApplication {

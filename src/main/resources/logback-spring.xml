@@ -3,7 +3,7 @@
     <springProperty scope="context" name="logPath" source="log.path"  />
     <springProperty scope="context" name="logPattern" source="log.pattern" />
 
-    <conversionRule conversionWord="requestId" converterClass="com.st.demo.log.LogTraceConvert" />
+    <conversionRule conversionWord="requestId" converterClass="com.st.log.LogTraceConvert" />
 
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <!-- encoders are assigned the type
