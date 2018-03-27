@@ -1,6 +1,6 @@
 package com.st.demo.vo;
 
-import com.st.demo.Eunm.ResultEnum;
+import com.st.demo.eunm.ResultEnum;
 
 public class ResponseVo {
 

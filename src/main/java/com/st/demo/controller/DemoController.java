@@ -1,6 +1,6 @@
 package com.st.demo.controller;
 
-import com.st.demo.Eunm.ResultEnum;
+import com.st.demo.eunm.ResultEnum;
 import com.st.demo.model.DemoUser;
 import com.st.demo.service.IDemoService;
 import com.st.demo.vo.ResponseVo;

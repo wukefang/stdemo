@@ -1,4 +1,4 @@
-package com.st.demo.Eunm;
+package com.st.demo.eunm;
 
 public enum ResultEnum {
 
