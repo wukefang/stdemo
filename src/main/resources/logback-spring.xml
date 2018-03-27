@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration >
     <springProperty scope="context" name="logPath" source="log.path"  />
+    <springProperty scope="context" name="logPattern" source="log.pattern" />
 
     <conversionRule conversionWord="requestId" converterClass="com.st.log.SpsTraceConvert" />
 
@@ -12,10 +13,19 @@
         </encoder>
     </appender>
 
-    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <!-- encoders are assigned the type
              ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
         <file>${logPath}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${logPattern}.%d{yyyy-MM-dd}-%i.log
+            </FileNamePattern>
+            <maxHistory>1</maxHistory>
+            <TimeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100MB</maxFileSize>
+            </TimeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} [%thread] [%requestId] %-5level %logger{36} - %msg%n</pattern>
         </encoder>

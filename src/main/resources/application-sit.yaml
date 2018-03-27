@@ -4,8 +4,8 @@ server:
 
 
 log:
-  path: C:\wkf_work_space\Temp\stdemo_dev.log
-
+  path: C:\wkf_work_space\Temp\stdemo\stdemo_sit.log
+  pattern: C:\wkf_work_space\Temp\stdemo\stdemo_sit
 
 
 druid:
