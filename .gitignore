@@ -4,8 +4,9 @@
 
 # IntelliJ project files
 .idea
-
+stdemo.iml
 out
 target
-/.idea/inspectionProfiles/Project_Default.xml
 
+
+src/test/
