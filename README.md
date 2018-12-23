@@ -1,5 +1,5 @@
 # stdemo(spring boot demo)
-sprignboot开发框架
+spring boot开发框架
 
-**多环境配置
-**读写分离
+多环境配置
+读写分离
